@@ -30,7 +30,7 @@ public class Main {
 
         }*/
         Board board = new Board();
-        board.setPiece(new Coordinates(File.A, 1), new Pawn(Color.WHITE));
+        board.setPiece(new Coordinates(File.C, 4), new Pawn(Color.WHITE));
         BoardConsoleRenderer boardConsoleRenderer = new BoardConsoleRenderer();
 
         boardConsoleRenderer.render(board);
@@ -40,7 +40,7 @@ public class Main {
                 {-1, 1},
                 {-1, -1}
         };
-        Iterator<Coordinates> possibleMoves = new PossibleCoordinatesIterator(new Coordinates(File.A, 1), coordina);
+        Iterator<Coordinates> possibleMoves = new PossibleCoordinatesIterator(new Coordinates(File.C, 4), coordina);
         while(possibleMoves.hasNext()){
             System.out.println(possibleMoves.next());
         }
