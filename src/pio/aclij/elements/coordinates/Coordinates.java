@@ -2,22 +2,32 @@ package pio.aclij.elements.coordinates;
 
 import pio.aclij.elements.coordinates.exceptions.InvalidCoordinatesException;
 
+import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Coordinates {
     File file;
-    Integer rank;
+    int rank;
 
     private static final Pattern pattern = Pattern.compile("^([A-H])([1-8])$");
 
-    public Coordinates(File file, Integer rank) {
+    public Coordinates(File file, int rank) {
         this.file = file;
         this.rank = rank;
     }
+
+    public Coordinates(int file, int rank) {
+        this.file = File.values()[file];
+        this.rank = rank;
+    }
+
     public boolean isSquareWhite(){
-        return (rank + file.ordinal()) % 2 == 0;
+        return (this.rank + this.file.ordinal()) % 2 == 0;
+    }
+    public static boolean isValidCoordinate(int file, int rank){
+        return (file >= 0 && file < 8) && (rank > 0 && rank < 9);
     }
 
 
@@ -27,8 +37,17 @@ public class Coordinates {
             throw new InvalidCoordinatesException(coordinates);
         String file = matcher.group(1);
         String rank = matcher.group(2);
-        return new Coordinates(File.valueOf(file), Integer.valueOf(rank));
+        return new Coordinates(File.valueOf(file), Integer.parseInt(rank));
     }
+    public Coordinates calculate(int a, int b){
+        int file = this.file.ordinal() + a;
+        int rank = this.rank + b;
+        if (!Coordinates.isValidCoordinate(file, rank)) throw new InvalidCoordinatesException(String.format("File: %d, Rank: %d", file, rank));
+        this.file = File.values()[file];
+        this.rank = rank;
+        return this;
+    }
+
 
     @Override
     public String toString() {
