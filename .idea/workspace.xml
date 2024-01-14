@@ -7,7 +7,15 @@
     <list default="true" id="13324566-fcc5-498f-b1e8-55cf3e7dee88" name="Changes" comment="Possible coordinates iterator">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pio/aclij/elements/coordinates/PossibleCoordinatesIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/elements/coordinates/PossibleCoordinatesIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,22 +55,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Start.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "possbile-moves",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Start.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;possbile-moves&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="render" />
@@ -89,7 +97,8 @@
       <option name="presentableId" value="Default" />
       <updated>1705164874794</updated>
       <workItem from="1705164875824" duration="8312000" />
-      <workItem from="1705226817542" duration="13061000" />
+      <workItem from="1705226817542" duration="13087000" />
+      <workItem from="1705249980115" duration="8618000" />
     </task>
     <task id="LOCAL-00001" summary="Describe chess pieces, build chessboard, and implement piece movement functionality.">
       <option name="closed" value="true" />
@@ -107,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705235205139</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Possible coordinates iterator">
+      <option name="closed" value="true" />
+      <created>1705239898182</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1705239898182</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,5 +1,8 @@
 package pio.aclij.elements.coordinates;
 
+import pio.aclij.board.PositionedPiece;
+
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
@@ -10,21 +13,17 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
     int selectedFile;
     int selectedRank;
 
-    public PossibleCoordinatesIterator(Coordinates coordinates, int [][] coordinatesPossibleMoves) {
-        this.coordinates = coordinates;
-        this.coordinatesPossibleMoves = coordinatesPossibleMoves;
+    public PossibleCoordinatesIterator(PositionedPiece positionedPiece) {
+        this.coordinates = positionedPiece.coordinates;
+        this.coordinatesPossibleMoves = positionedPiece.piece.getMovement();
         initSelect();
     }
 
     @Override
     public boolean hasNext() {
         if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) return true;
-        if (selectedSideMoves == 3) return false;
-
-        int selectedSideMovesTemp = this.selectedSideMoves;
-        boolean checkNext = checkNextSideFrom();
-        this.selectedSideMoves = selectedSideMovesTemp + 1;
-        return checkNext;
+        if (selectedSideMoves == coordinatesPossibleMoves.length - 1) return false;
+        return checkNextSideFrom();
     }
 
     @Override
@@ -32,7 +31,7 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
         boolean isValid = Coordinates.isValidCoordinate(selectedFile, selectedRank);
         Coordinates selectedCoordinates = new Coordinates(selectedFile, selectedRank);
         if (!isValid) {
-            if (selectedSideMoves == 3) throw new NoSuchElementException();
+            if (selectedSideMoves == coordinatesPossibleMoves.length - 1) throw new NoSuchElementException();
             skipSide();
         }
         else
@@ -45,9 +44,9 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
         selectedRank += selectedSide[1];
     }
     public void initSelect(){
-        int [] selectedSide = coordinatesPossibleMoves[this.selectedSideMoves];
-        selectedFile = coordinates.file.ordinal() + selectedSide[0];
-        selectedRank = coordinates.rank + selectedSide[1];
+        selectedFile = coordinates.file.ordinal();
+        selectedRank = coordinates.rank;
+        moveSelect();
     }
     public void increaseSelectSide(){
         selectedSideMoves += 1;
@@ -57,7 +56,7 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
         initSelect();
     }
     public boolean checkNextSideFrom(){
-        if (selectedSideMoves == 3) return false;
+        if (selectedSideMoves == coordinatesPossibleMoves.length - 1) return false;
         skipSide();
         return Coordinates.isValidCoordinate(selectedFile, selectedRank) || checkNextSideFrom();
     }

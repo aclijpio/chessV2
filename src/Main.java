@@ -3,7 +3,9 @@ import pio.aclij.elements.Color;
 import pio.aclij.elements.coordinates.Coordinates;
 import pio.aclij.elements.coordinates.File;
 import pio.aclij.elements.coordinates.PossibleCoordinatesIterator;
+import pio.aclij.pieces.Bishop;
 import pio.aclij.pieces.Pawn;
+import pio.aclij.pieces.Rook;
 import pio.aclij.render.BoardConsoleRenderer;
 
 import java.util.Iterator;
@@ -30,7 +32,7 @@ public class Main {
 
         }*/
         Board board = new Board();
-        board.setPiece(new Coordinates(File.C, 4), new Pawn(Color.WHITE));
+        board.setPiece(new Coordinates(File.A, 1), new Bishop(Color.WHITE));
         BoardConsoleRenderer boardConsoleRenderer = new BoardConsoleRenderer();
 
         boardConsoleRenderer.render(board);
@@ -40,7 +42,7 @@ public class Main {
                 {-1, 1},
                 {-1, -1}
         };
-        Iterator<Coordinates> possibleMoves = new PossibleCoordinatesIterator(new Coordinates(File.C, 4), coordina);
+        Iterator<Coordinates> possibleMoves = new PossibleCoordinatesIterator(board.getPositionedPiece(new Coordinates(File.A, 1)));
         while(possibleMoves.hasNext()){
             System.out.println(possibleMoves.next());
         }

@@ -1,17 +1,25 @@
 package pio.aclij.pieces;
 
 import pio.aclij.elements.Color;
-import pio.aclij.elements.coordinates.Coordinates;
-
-import java.util.Set;
 
 public class Knight extends Piece {
+    public final static int [][] MOVEMENT = {
+            {1, 2},
+            {2, 1},
+            {-1, 2},
+            {2, -1},
+            {-2, 1},
+            {1, -2},
+            {-2, -1},
+            {-1, -2}
+    };
     public Knight(Color color) {
         super(color);
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves() {
-        return null;
+    public int[][] getMovement() {
+        return MOVEMENT;
     }
+
 }
