@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="13324566-fcc5-498f-b1e8-55cf3e7dee88" name="Changes" comment="Possible coordinates iterator">
+    <list default="true" id="13324566-fcc5-498f-b1e8-55cf3e7dee88" name="Changes" comment="Single Possible coordinates iterator / part of the pawn realized">
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_01_2024,_13_29_[Changes]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_15_01_2024__13_29__Changes_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/elements/MoveType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pio/aclij/pieces/elements/coordinates/SinglePossibleCoordinatesIterator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/Board.java" afterDir="false" />
@@ -106,7 +110,7 @@
       <workItem from="1705164875824" duration="8312000" />
       <workItem from="1705226817542" duration="13087000" />
       <workItem from="1705249980115" duration="8618000" />
-      <workItem from="1705342493132" duration="2000000" />
+      <workItem from="1705342493132" duration="2347000" />
     </task>
     <task id="LOCAL-00001" summary="Describe chess pieces, build chessboard, and implement piece movement functionality.">
       <option name="closed" value="true" />
@@ -132,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705239898182</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Single Possible coordinates iterator / part of the pawn realized">
+      <option name="closed" value="true" />
+      <created>1705344978173</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705344978173</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Describe chess pieces, build chessboard, and implement piece movement functionality." />
     <MESSAGE value="Possible coordinates iterator" />
-    <option name="LAST_COMMIT_MESSAGE" value="Possible coordinates iterator" />
+    <MESSAGE value="Single Possible coordinates iterator / part of the pawn realized" />
+    <option name="LAST_COMMIT_MESSAGE" value="Single Possible coordinates iterator / part of the pawn realized" />
   </component>
 </project>
