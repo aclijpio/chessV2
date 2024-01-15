@@ -1,4 +1,4 @@
-package pio.aclij.elements.coordinates.exceptions;
+package pio.aclij.pieces.elements.coordinates.exceptions;
 
 public class CoordinatesException extends RuntimeException {
     public CoordinatesException() {

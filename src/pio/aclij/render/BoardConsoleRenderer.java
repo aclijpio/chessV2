@@ -2,9 +2,9 @@ package pio.aclij.render;
 
 
 import pio.aclij.board.Board;
-import pio.aclij.elements.coordinates.Coordinates;
-import pio.aclij.elements.coordinates.File;
-import pio.aclij.elements.Color;
+import pio.aclij.pieces.elements.coordinates.Coordinates;
+import pio.aclij.pieces.elements.coordinates.File;
+import pio.aclij.pieces.elements.Color;
 import pio.aclij.pieces.Piece;
 
 public class BoardConsoleRenderer{
