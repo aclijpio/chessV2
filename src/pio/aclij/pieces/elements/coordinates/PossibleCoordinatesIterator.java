@@ -1,21 +1,20 @@
-package pio.aclij.elements.coordinates;
+package pio.aclij.pieces.elements.coordinates;
 
-import pio.aclij.board.PositionedPiece;
+import pio.aclij.pieces.Piece;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
 public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
-    private final int[][] coordinatesPossibleMoves;
+    final int[][] coordinatesPossibleMoves;
     int selectedSideMoves = 0;
-    private final Coordinates coordinates;
+    final Coordinates coordinates;
     int selectedFile;
     int selectedRank;
 
-    public PossibleCoordinatesIterator(PositionedPiece positionedPiece) {
-        this.coordinates = positionedPiece.coordinates;
-        this.coordinatesPossibleMoves = positionedPiece.piece.getMovement();
+    public PossibleCoordinatesIterator(Piece piece) {
+        this.coordinates = piece.coordinates;
+        this.coordinatesPossibleMoves = piece.getMovement();
         initSelect();
     }
 

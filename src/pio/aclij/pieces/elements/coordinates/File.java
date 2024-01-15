@@ -1,4 +1,4 @@
-package pio.aclij.elements.coordinates;
+package pio.aclij.pieces.elements.coordinates;
 
 public enum File {
     A,

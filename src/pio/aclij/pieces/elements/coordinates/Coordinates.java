@@ -1,8 +1,7 @@
-package pio.aclij.elements.coordinates;
+package pio.aclij.pieces.elements.coordinates;
 
-import pio.aclij.elements.coordinates.exceptions.InvalidCoordinatesException;
+import pio.aclij.pieces.elements.coordinates.exceptions.InvalidCoordinatesException;
 
-import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
