@@ -2,12 +2,10 @@ package pio.aclij.board;
 
 import pio.aclij.board.exceptions.IllegalBoardException;
 import pio.aclij.pieces.elements.coordinates.Coordinates;
-import pio.aclij.pieces.elements.coordinates.PossibleCoordinatesIterator;
 import pio.aclij.pieces.Piece;
 
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 
@@ -18,7 +16,6 @@ public class Board{
     public boolean isSquareOccupied(Coordinates coordinates){
         return pieces.containsKey(coordinates);
     }
-
     public Piece getPiece(Coordinates coordinates){
         return pieces.get(coordinates);
     }
@@ -34,8 +31,5 @@ public class Board{
         Piece piece = this.tryGetPiece(selectedCoordinates);
         this.pieces.remove(selectedCoordinates);
         this.setPiece(targetCoordinates, piece);
-    }
-    public Iterator<Coordinates> calculatePossibleMoves(Coordinates coordinates){
-            return null;
     }
 }

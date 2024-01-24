@@ -35,8 +35,8 @@ public class Knight extends Piece {
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves(Board board) {
-        return null;
+    public Set<Coordinates> calculatePossibleMoves(Board board) {
+        return calculateDefaultSinglePossibleMoves(board);
     }
 
 

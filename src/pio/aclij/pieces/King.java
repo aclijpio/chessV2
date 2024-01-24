@@ -2,7 +2,6 @@ package pio.aclij.pieces;
 
 import pio.aclij.board.Board;
 import pio.aclij.pieces.elements.Color;
-import pio.aclij.pieces.elements.MoveType;
 import pio.aclij.pieces.elements.coordinates.Coordinates;
 import pio.aclij.pieces.elements.coordinates.SinglePossibleCoordinatesIterator;
 
@@ -37,8 +36,8 @@ public class King extends Piece{
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves(Board board) {
-        return null;
+    public Set<Coordinates> calculatePossibleMoves(Board board) {
+        return calculateDefaultSinglePossibleMoves(board);
     }
 
 }

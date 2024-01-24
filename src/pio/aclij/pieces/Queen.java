@@ -36,8 +36,8 @@ public class Queen extends Piece{
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves(Board board) {
-        return null;
+    public Set<Coordinates> calculatePossibleMoves(Board board) {
+        return calculateDefaultMultiPossibleMoves(board);
     }
 
 
