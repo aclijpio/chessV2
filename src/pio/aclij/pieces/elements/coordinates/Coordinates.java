@@ -7,8 +7,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Coordinates {
-    File file;
-    int rank;
+    public File file;
+    public int rank;
 
     private static final Pattern pattern = Pattern.compile("^([A-H])([1-8])$");
 
@@ -26,7 +26,7 @@ public class Coordinates {
         return (this.rank + this.file.ordinal()) % 2 == 0;
     }
     public static boolean isValidCoordinate(int file, int rank){
-        return (file >= 0 && file < 8) && (rank > 0 && rank < 9);
+        return (file >= 0 && file < File.values().length) && (rank > 0 && rank < 9);
     }
 
 

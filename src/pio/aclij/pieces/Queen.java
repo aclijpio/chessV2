@@ -20,8 +20,8 @@ public class Queen extends Piece{
             {0, -1}
     };
 
-    public Queen(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public Queen(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
 
 
@@ -36,8 +36,8 @@ public class Queen extends Piece{
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves(Board board) {
-        return null;
+    public Set<Coordinates> calculatePossibleMoves(Board board) {
+        return calculateDefaultMultiPossibleMoves(board);
     }
 
 

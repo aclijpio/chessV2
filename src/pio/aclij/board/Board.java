@@ -36,6 +36,6 @@ public class Board{
         this.setPiece(targetCoordinates, piece);
     }
     public Iterator<Coordinates> calculatePossibleMoves(Coordinates coordinates){
-        return null;
+            return null;
     }
 }

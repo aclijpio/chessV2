@@ -20,8 +20,8 @@ public class Knight extends Piece {
             {-1, -2}
     };
 
-    public Knight(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public Knight(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
 
     @Override
@@ -35,8 +35,8 @@ public class Knight extends Piece {
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves(Board board) {
-        return null;
+    public Set<Coordinates> calculatePossibleMoves(Board board) {
+        return calculateDefaultSinglePossibleMoves(board);
     }
 
 

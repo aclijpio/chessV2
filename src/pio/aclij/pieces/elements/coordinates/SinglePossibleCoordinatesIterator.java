@@ -2,6 +2,8 @@ package pio.aclij.pieces.elements.coordinates;
 
 import pio.aclij.pieces.Piece;
 
+import java.util.NoSuchElementException;
+
 public class SinglePossibleCoordinatesIterator extends PossibleCoordinatesIterator {
 
     public SinglePossibleCoordinatesIterator(Piece piece) {
@@ -9,20 +11,22 @@ public class SinglePossibleCoordinatesIterator extends PossibleCoordinatesIterat
     }
 
     @Override
-    public void initSelect() {
-        this.moveSelect();
+    public boolean hasNext() {
+        if (selectedSideMoves == coordinatesPossibleMoves.length) return false;
+        if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) return true;
+        return checkNextSideFrom();
     }
 
     @Override
-    public void skipSide() {
-        moveSelect();
-    }
-
-    @Override
-    public void moveSelect() {
-        int [] selectedSide = coordinatesPossibleMoves[this.selectedSideMoves];
-        increaseSelectSide();
-        selectedFile = selectedSide[0] + coordinates.file.ordinal();
-        selectedRank = selectedSide[1] + coordinates.rank;
+    public Coordinates next() {
+        if (selectedSideMoves == coordinatesPossibleMoves.length) throw new NoSuchElementException();
+        if (!Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
+            skipSide();
+            return next();
+        }
+        Coordinates selectedCoordinates = new Coordinates(selectedFile, selectedRank);
+        if (selectedSideMoves != coordinatesPossibleMoves.length - 1) skipSide();
+        else increaseSelectSide();
+        return selectedCoordinates;
     }
 }

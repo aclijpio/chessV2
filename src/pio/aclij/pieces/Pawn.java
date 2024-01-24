@@ -22,8 +22,8 @@ public class Pawn extends Piece{
             {1, -1},
             {-1, -1}
     };
-    public Pawn(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public Pawn(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
     @Override
     public int[][] getMovement() {
@@ -35,18 +35,20 @@ public class Pawn extends Piece{
     }
 
     @Override
-    public Set<Coordinates> getPossibleMoves(Board board) {
+    public Set<Coordinates> calculatePossibleMoves(Board board) {
         Iterator<Coordinates> moves = this.getMoves();
         Set<Coordinates> possibleMoves = new HashSet<>();
         while(moves.hasNext()){
-            Coordinates currentCoordinates = moves.next();
-            if (board.isSquareOccupied(currentCoordinates)){
-                    Piece piece = board.getPiece(currentCoordinates);
-
+            Coordinates targetCoordinates = moves.next();
+            if (board.isSquareOccupied(targetCoordinates)){
+                    if (targetCoordinates.file == this.coordinates.file) continue;
+                    Piece piece = board.getPiece(targetCoordinates);
+                    if (this.isEnemy(piece))
+                        possibleMoves.add(targetCoordinates);
+            } else if (targetCoordinates.file == this.coordinates.file) {
+                possibleMoves.add(targetCoordinates);
             }
         }
-
-
-        return null;
+        return possibleMoves;
     }
 }

@@ -27,14 +27,14 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
 
     @Override
     public Coordinates next() {
-        boolean isValid = Coordinates.isValidCoordinate(selectedFile, selectedRank);
-        Coordinates selectedCoordinates = new Coordinates(selectedFile, selectedRank);
-        if (!isValid) {
+        if (!Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
             if (selectedSideMoves == coordinatesPossibleMoves.length - 1) throw new NoSuchElementException();
             skipSide();
+            return next();
         }
-        else
-            moveSelect();
+        Coordinates selectedCoordinates = new Coordinates(selectedFile, selectedRank);
+
+        moveSelect();
         return selectedCoordinates;
     }
     public void moveSelect(){
@@ -43,9 +43,9 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
         selectedRank += selectedSide[1];
     }
     public void initSelect(){
-        selectedFile = coordinates.file.ordinal();
-        selectedRank = coordinates.rank;
-        moveSelect();
+        int [] selectedSide = coordinatesPossibleMoves[this.selectedSideMoves];
+        selectedFile = coordinates.file.ordinal() + selectedSide[0];
+        selectedRank = coordinates.rank + selectedSide[1];
     }
     public void increaseSelectSide(){
         selectedSideMoves += 1;
