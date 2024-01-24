@@ -15,8 +15,8 @@ public class Rook extends Piece{
             {0, -1},
     };
 
-    public Rook(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public Rook(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
 
     @Override

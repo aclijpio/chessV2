@@ -20,8 +20,8 @@ public class King extends Piece{
             {0, -1}
     };
 
-    public King(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public King(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
 
     @Override

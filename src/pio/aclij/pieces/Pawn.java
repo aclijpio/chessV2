@@ -22,8 +22,8 @@ public class Pawn extends Piece{
             {1, -1},
             {-1, -1}
     };
-    public Pawn(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public Pawn(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
     @Override
     public int[][] getMovement() {

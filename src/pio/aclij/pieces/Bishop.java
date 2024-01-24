@@ -15,8 +15,8 @@ public class Bishop extends Piece{
             {-1, 1},
             {-1, -1}
     };
-    public Bishop(Coordinates coordinates, Color color) {
-        super(coordinates, color);
+    public Bishop(Color color, Coordinates coordinates) {
+        super(color, coordinates);
     }
     @Override
     public int[][] getMovement() {

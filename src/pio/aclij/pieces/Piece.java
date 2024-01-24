@@ -13,7 +13,7 @@ public abstract class Piece {
 
     public Color color;
     public Coordinates coordinates;
-    public Piece(Coordinates coordinates, Color color) {
+    public Piece(Color color, Coordinates coordinates) {
         this.color = color;
         this.coordinates = coordinates;
     }
