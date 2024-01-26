@@ -1,0 +1,19 @@
+Index: src/pio/aclij/board/BoardFactory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package pio.aclij.board;\n\nimport pio.aclij.board.fen.FenHandler;\n\npublic class BoardFactory {\n    public static Board fromFen(String fen){\n        return FenHandler.decode(fen);\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/pio/aclij/board/BoardFactory.java b/src/pio/aclij/board/BoardFactory.java
+--- a/src/pio/aclij/board/BoardFactory.java	(revision 82831a14b7662ff374128fbfa0e26ea1ed3f4264)
++++ b/src/pio/aclij/board/BoardFactory.java	(date 1706195038447)
+@@ -3,7 +3,7 @@
+ import pio.aclij.board.fen.FenHandler;
+ 
+ public class BoardFactory {
+-    public static Board fromFen(String fen){
++    public static Board fromFen(String fen) {
+         return FenHandler.decode(fen);
+     }
+ }
