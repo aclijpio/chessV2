@@ -1,4 +1,4 @@
-package pio.aclij.board.conditions;
+package pio.aclij.game.conditions;
 
 public class PawnPromotionCondition {
 }

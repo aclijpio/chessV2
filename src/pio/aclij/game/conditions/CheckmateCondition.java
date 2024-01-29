@@ -1,6 +1,5 @@
-package pio.aclij.board.conditions;
+package pio.aclij.game.conditions;
 
-import pio.aclij.board.Board;
 import pio.aclij.pieces.King;
 import pio.aclij.pieces.Piece;
 
