@@ -1,36 +1,21 @@
-import pio.aclij.board.Board;
-import pio.aclij.pieces.King;
-import pio.aclij.pieces.Knight;
-import pio.aclij.pieces.Pawn;
-import pio.aclij.pieces.Rook;
-import pio.aclij.pieces.elements.Color;
-import pio.aclij.pieces.elements.coordinates.Coordinates;
-import pio.aclij.pieces.elements.coordinates.File;
-import pio.aclij.pieces.elements.coordinates.SinglePossibleCoordinatesIterator;
-import pio.aclij.render.BoardConsoleRenderer;
+import pio.aclij.game.ChessRulesBuilder;
+import pio.aclij.game.ChessRuleChain;
+import pio.aclij.game.OrderedChessRule;
+import pio.aclij.game.conditions.CheckmateRule;
+import pio.aclij.game.conditions.PawnPromotionRule;
 
-import java.util.Iterator;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        /*Board board = new Board();
-        board.setPiece(new Coordinates(File.A, 1), new Pawn(Color.WHITE));
 
+        ChessRulesBuilder chessGameRules = new ChessRulesBuilder();
 
+        chessGameRules.put(new CheckmateRule());
+        chessGameRules.putRuleBefore(new PawnPromotionRule(), CheckmateRule.class);
 
-        BoardConsoleRenderer boardConsoleRenderer = new BoardConsoleRenderer();
+        ChessRuleChain chain = chessGameRules.build();
 
-        Scanner scanner = new Scanner(System.in);
-        for (int i = 0; i < 10; i++) {
-            boardConsoleRenderer.render(board);
-            if (scanner.hasNext()){
-                Coordinates selectedCoordinates = Coordinates.valueOf(scanner.next());
-                Coordinates targetCoordinates = Coordinates.valueOf(scanner.next());
-
-                board.pieceMoveTo(selectedCoordinates, targetCoordinates);
-            }
-
-        }*/
-
+        System.out.println(chain.getRules().stream().map(OrderedChessRule::getRule).map(rule -> rule.getClass().getName()).collect(Collectors.joining(", ")));
     }
 }

@@ -1,11 +1,10 @@
 package pio.aclij.game.conditions;
 
-import pio.aclij.pieces.King;
 import pio.aclij.pieces.Piece;
 
-public class CheckmateCondition implements ChessCondition{
+public class PawnPromotionRule implements ChessRule {
     @Override
     public boolean condition(Piece piece) {
-        return piece instanceof King;
+        return false;
     }
 }
