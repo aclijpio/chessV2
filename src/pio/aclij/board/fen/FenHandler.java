@@ -3,10 +3,10 @@ package pio.aclij.board.fen;
 import pio.aclij.board.Board;
 import pio.aclij.board.fen.exceptions.DecodingException;
 import pio.aclij.board.fen.exceptions.EncodingException;
-import pio.aclij.pieces.*;
-import pio.aclij.pieces.elements.Color;
-import pio.aclij.pieces.elements.coordinates.Coordinates;
-import pio.aclij.pieces.elements.coordinates.File;
+import pio.aclij.board.pieces.*;
+import pio.aclij.board.pieces.elements.Color;
+import pio.aclij.board.pieces.elements.coordinates.Coordinates;
+import pio.aclij.board.pieces.elements.coordinates.File;
 
 public class FenHandler {
     // FOR   BOARD

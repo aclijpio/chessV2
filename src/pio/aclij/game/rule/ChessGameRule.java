@@ -1,5 +1,8 @@
-package pio.aclij.game;
+package pio.aclij.game.rule;
 
+
+import pio.aclij.game.rule.ChessRuleChain;
+import pio.aclij.game.rule.ChessRulesBuilder;
 
 import java.util.function.Consumer;
 

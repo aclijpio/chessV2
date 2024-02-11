@@ -5,10 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13324566-fcc5-498f-b1e8-55cf3e7dee88" name="Changes" comment="Game rules / chain of rules">
-      <change afterPath="$PROJECT_DIR$/src/pio/aclij/game/ChessGameRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024,_18_03_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024,_18_03_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024__18_03__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024__18_03__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessRules.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessGameRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessGameRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessGameState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessRuleChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRuleChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessRulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRulesBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/OrderedChessRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/OrderedChessRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/RuleOrderRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/RuleOrderRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/CheckmateRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/CheckmateRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/ChessRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/ChessRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/PawnPromotionRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/PawnPromotionRule.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +83,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="pio.aclij.game.conditions" />
       <recent name="render" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -100,7 +114,11 @@
       <workItem from="1706257081286" duration="680000" />
       <workItem from="1706449440655" duration="1647000" />
       <workItem from="1706511729757" duration="8446000" />
-      <workItem from="1706605997527" duration="6690000" />
+      <workItem from="1706605997527" duration="8271000" />
+      <workItem from="1706687214540" duration="2497000" />
+      <workItem from="1707479636422" duration="1090000" />
+      <workItem from="1707556041879" duration="1886000" />
+      <workItem from="1707636879136" duration="1375000" />
     </task>
     <task id="LOCAL-00001" summary="Describe chess pieces, build chessboard, and implement piece movement functionality.">
       <option name="closed" value="true" />
@@ -150,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706538468267</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Game rules / chain of rules">
+      <option name="closed" value="true" />
+      <created>1706627713897</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1706627713897</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

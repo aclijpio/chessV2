@@ -1,6 +1,6 @@
-package pio.aclij.pieces.elements.coordinates;
+package pio.aclij.board.pieces.elements.coordinates;
 
-import pio.aclij.pieces.Piece;
+import pio.aclij.board.pieces.Piece;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

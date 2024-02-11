@@ -1,9 +1,10 @@
-package pio.aclij.pieces;
+package pio.aclij.board.pieces;
 
 import pio.aclij.board.Board;
-import pio.aclij.pieces.elements.Color;
-import pio.aclij.pieces.elements.coordinates.Coordinates;
-import pio.aclij.pieces.elements.coordinates.SinglePossibleCoordinatesIterator;
+import pio.aclij.board.pieces.elements.Color;
+import pio.aclij.board.pieces.elements.coordinates.Coordinates;
+import pio.aclij.board.pieces.elements.coordinates.SinglePossibleCoordinatesIterator;
+import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -50,5 +51,10 @@ public class Pawn extends Piece{
             }
         }
         return possibleMoves;
+    }
+
+    @Override
+    public boolean isAvailableMove(UnknownPiece unknown) {
+        return false;
     }
 }

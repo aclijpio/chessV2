@@ -2,13 +2,12 @@ package pio.aclij.render;
 
 
 import pio.aclij.board.Board;
-import pio.aclij.pieces.elements.coordinates.Coordinates;
-import pio.aclij.pieces.elements.coordinates.File;
-import pio.aclij.pieces.elements.Color;
-import pio.aclij.pieces.Piece;
+import pio.aclij.board.pieces.elements.coordinates.Coordinates;
+import pio.aclij.board.pieces.elements.coordinates.File;
+import pio.aclij.board.pieces.elements.Color;
+import pio.aclij.board.pieces.Piece;
 
 public class BoardConsoleRenderer{
-
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_WHITE_PIECE_COLOR = "\u001B[97m";
     private static final String ANSI_BLACK_PIECE_COLOR = "\u001B[30m";

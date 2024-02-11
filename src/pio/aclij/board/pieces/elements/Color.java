@@ -1,4 +1,4 @@
-package pio.aclij.pieces.elements;
+package pio.aclij.board.pieces.elements;
 
 public enum Color {
     WHITE,

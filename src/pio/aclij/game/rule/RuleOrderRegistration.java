@@ -1,4 +1,4 @@
-package pio.aclij.game;
+package pio.aclij.game.rule;
 
 import pio.aclij.game.conditions.CheckmateRule;
 import pio.aclij.game.conditions.ChessRule;

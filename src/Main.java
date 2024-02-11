@@ -1,5 +1,5 @@
-import pio.aclij.game.ChessGameRule;
-import pio.aclij.game.OrderedChessRule;
+import pio.aclij.game.rule.ChessGameRule;
+import pio.aclij.game.rule.OrderedChessRule;
 import pio.aclij.game.conditions.CheckmateRule;
 import pio.aclij.game.conditions.PawnPromotionRule;
 

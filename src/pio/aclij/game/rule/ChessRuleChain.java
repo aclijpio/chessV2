@@ -1,4 +1,4 @@
-package pio.aclij.game;
+package pio.aclij.game.rule;
 
 import java.util.List;
 

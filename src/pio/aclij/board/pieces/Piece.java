@@ -1,9 +1,10 @@
-package pio.aclij.pieces;
+package pio.aclij.board.pieces;
 
 
 import pio.aclij.board.Board;
-import pio.aclij.pieces.elements.Color;
-import pio.aclij.pieces.elements.coordinates.Coordinates;
+import pio.aclij.board.pieces.elements.Color;
+import pio.aclij.board.pieces.elements.coordinates.Coordinates;
+import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -29,6 +30,7 @@ public abstract class Piece {
     public abstract int [][] getMovement();
     protected abstract Iterator<Coordinates> getMoves();
     public abstract Set<Coordinates> calculatePossibleMoves(Board board);
+    public abstract boolean isAvailableMove(UnknownPiece unknown);
     protected Set<Coordinates> calculateDefaultMultiPossibleMoves(Board board){
         Iterator<Coordinates> moves = this.getMoves();
         Set<Coordinates> possibleMoves = new HashSet<>();
@@ -58,5 +60,4 @@ public abstract class Piece {
         }
         return possibleMoves;
     }
-
 }
