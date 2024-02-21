@@ -5,18 +5,17 @@ import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 import pio.aclij.board.pieces.Piece;
 import pio.aclij.board.pieces.exceptions.PieceNotFoundException;
 import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
+import pio.aclij.game.rule.ChessGameState;
 
 
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 
 public class Board{
 
     Map<Coordinates, Piece> pieces = new HashMap<>();
     Color currentPlayerColor;
+    ChessGameState state;
     public boolean isSquareOccupied(Coordinates coordinates){
         return pieces.containsKey(coordinates);
     }
@@ -41,6 +40,12 @@ public class Board{
     public Map<Coordinates, Piece> getPieces(){
         return this.pieces;
     }
+    public Set<Piece> getAttackingPiecesOfClass(Class<? extends Piece> clazz){
+  /*      return this.getPieces().values().stream()
+                .*/
+        return null;
+    }
+
     public void pieceMoveTo(Coordinates selectedCoordinates, Coordinates targetCoordinates){
         Piece piece = this.tryGetPiece(selectedCoordinates);
         this.pieces.remove(selectedCoordinates);
@@ -56,5 +61,11 @@ public class Board{
 
     public void setCurrentPlayerColor(Color currentPlayerColor) {
         this.currentPlayerColor = currentPlayerColor;
+    }
+    public ChessGameState getState() {
+        return state;
+    }
+    public void setState(ChessGameState state) {
+        this.state = state;
     }
 }

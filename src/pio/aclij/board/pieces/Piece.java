@@ -9,6 +9,7 @@ import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public abstract class Piece {
 
@@ -27,8 +28,22 @@ public abstract class Piece {
     public boolean isAlly(Piece piece){
         return this.color == piece.color;
     }
+    public boolean isAttackingClass(Board board, Class<? extends Piece> clazz) {
+        Iterator<Coordinates> coordinatesIterator = this.getMoves();
+        while (coordinatesIterator.hasNext()){
+            Coordinates currentCoordinates = coordinatesIterator.next();
+            if (board.isSquareOccupied(currentCoordinates)){
+                Piece currentPiece = board.getPiece(currentCoordinates);
+                if (isEnemy(currentPiece) && currentPiece.getClass().equals(clazz)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
     public abstract int [][] getMovement();
     protected abstract Iterator<Coordinates> getMoves();
+    protected abstract Iterator<Coordinates> getMoves(Predicate<Piece> condition);
     public abstract Set<Coordinates> calculatePossibleMoves(Board board);
     public abstract boolean isAvailableMove(UnknownPiece unknown);
     protected Set<Coordinates> calculateDefaultMultiPossibleMoves(Board board){
@@ -59,5 +74,13 @@ public abstract class Piece {
             possibleMoves.add(targetCoordinates);
         }
         return possibleMoves;
+    }
+
+    @Override
+    public String toString() {
+        return "Piece{" +
+                "color=" + color +
+                ", coordinates=" + coordinates +
+                '}';
     }
 }

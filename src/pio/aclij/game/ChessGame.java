@@ -14,7 +14,6 @@ public class ChessGame {
 
 
     public void move(ChessMove move){
-
         if (move == null) return;
 
 

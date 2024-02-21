@@ -1,7 +1,6 @@
 package pio.aclij.game.rule;
 
-import pio.aclij.game.conditions.CheckmateRule;
-import pio.aclij.game.conditions.ChessRule;
+import pio.aclij.game.conditions.ChessRuleCondition;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,10 +11,10 @@ final class RuleOrderRegistration {
 
     private final Map<String, Integer> rulesToOrder = new HashMap<>();
     Step order = new Step(INITIAL_ORDER, ORDER_STEP);
-    void put(Class<? extends ChessRule> rule, int position){
+    void put(Class<? extends ChessRuleCondition> rule, int position){
         this.rulesToOrder.putIfAbsent(rule.getName(), position);
     }
-    void put(Class<? extends ChessRule> rule){
+    void put(Class<? extends ChessRuleCondition> rule){
         this.rulesToOrder.putIfAbsent(rule.getName(), order.next());
     }
     Integer getOrder(Class<?> clazz){

@@ -3,11 +3,12 @@ package pio.aclij.board.pieces;
 import pio.aclij.board.Board;
 import pio.aclij.board.pieces.elements.Color;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
-import pio.aclij.board.pieces.elements.coordinates.PossibleCoordinatesIterator;
+import pio.aclij.board.pieces.elements.coordinates.iterators.PossibleCoordinatesIterator;
 import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public class Queen extends Piece{
     public final static int [][] MOVEMENT = {
@@ -34,6 +35,11 @@ public class Queen extends Piece{
     @Override
     public Iterator<Coordinates> getMoves() {
         return new PossibleCoordinatesIterator(this);
+    }
+
+    @Override
+    protected Iterator<Coordinates> getMoves(Predicate<Piece> condition) {
+        return null;
     }
 
     @Override

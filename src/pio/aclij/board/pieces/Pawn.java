@@ -3,12 +3,13 @@ package pio.aclij.board.pieces;
 import pio.aclij.board.Board;
 import pio.aclij.board.pieces.elements.Color;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
-import pio.aclij.board.pieces.elements.coordinates.SinglePossibleCoordinatesIterator;
+import pio.aclij.board.pieces.elements.coordinates.iterators.SinglePossibleCoordinatesIterator;
 import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public class Pawn extends Piece{
     private final static int [][] WHITE_MOVEMENT = {
@@ -33,6 +34,11 @@ public class Pawn extends Piece{
     @Override
     public Iterator<Coordinates> getMoves() {
         return new SinglePossibleCoordinatesIterator(this);
+    }
+
+    @Override
+    protected Iterator<Coordinates> getMoves(Predicate<Piece> condition) {
+        return null;
     }
 
     @Override

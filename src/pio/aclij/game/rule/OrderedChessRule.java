@@ -1,27 +1,26 @@
 package pio.aclij.game.rule;
 
-import pio.aclij.game.conditions.ChessRule;
+import pio.aclij.game.conditions.ChessRuleCondition;
 
 public class OrderedChessRule {
-    private final ChessRule rule;
+    private final ChessRuleCondition condition;
     private final int order;
 
-    public OrderedChessRule(ChessRule rule, int order) {
-        this.rule = rule;
+    public OrderedChessRule(ChessRuleCondition condition, int order) {
+        this.condition = condition;
         this.order = order;
     }
 
     public int getOrder() {
         return this.order;
     }
-    public ChessRule getRule(){
-        return this.rule;
+    public ChessRuleCondition getCondition(){
+        return this.condition;
     }
-
     @Override
     public String toString() {
         return "OrderedChessRule{" +
-                "rule=" + rule +
+                "rule=" + condition +
                 ", order=" + order +
                 '}';
     }

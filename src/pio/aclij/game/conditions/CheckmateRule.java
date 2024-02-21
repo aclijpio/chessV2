@@ -4,9 +4,9 @@ import pio.aclij.board.Board;
 import pio.aclij.game.rule.ChessGameState;
 import pio.aclij.board.pieces.Piece;
 
-public class CheckmateRule extends ChessRule {
+public class CheckmateRule extends ChessRuleCondition {
     @Override
-    ChessGameState applyPieceRule(Piece piece) {
+    public ChessGameState applyPieceRule(Piece piece) {
         return super.applyPieceRule(piece);
     }
     @Override

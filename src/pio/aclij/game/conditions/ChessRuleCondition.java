@@ -5,8 +5,8 @@ import pio.aclij.game.rule.ChessGameState;
 import pio.aclij.board.pieces.Piece;
 
 
-public abstract class ChessRule {
-    ChessGameState applyPieceRule(Piece piece){
+public abstract class ChessRuleCondition {
+    public ChessGameState applyPieceRule(Piece piece){
         return ChessGameState.ACTIVE;
     }
     ChessGameState applyBoardRule(Board board){

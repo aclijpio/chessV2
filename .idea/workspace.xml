@@ -5,23 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13324566-fcc5-498f-b1e8-55cf3e7dee88" name="Changes" comment="Game rules / chain of rules">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024,_18_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024,_18_03_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024__18_03__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_25_01_2024__18_03__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessGameRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessGameRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessGameState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessGameState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessRuleChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRuleChain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessRulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRulesBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/OrderedChessRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/OrderedChessRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/RuleOrderRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/RuleOrderRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/elements/coordinates/PossibleCoordinatesIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/elements/coordinates/iterators/PossibleCoordinatesIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/elements/coordinates/SinglePossibleCoordinatesIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/elements/coordinates/iterators/SinglePossibleCoordinatesIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/board/pieces/unknownPiece/AbstractPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/board/pieces/unknownPiece/AbstractPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/ChessGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/CheckmateRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/CheckmateRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/ChessRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/ChessRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/ChessRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/ChessRuleCondition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/conditions/PawnPromotionRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/conditions/PawnPromotionRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRuleChain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRuleChain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRulesBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/ChessRulesBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/rule/OrderedChessRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/OrderedChessRule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pio/aclij/game/rule/RuleOrderRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/pio/aclij/game/rule/RuleOrderRegistration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +123,9 @@
       <workItem from="1707479636422" duration="1090000" />
       <workItem from="1707556041879" duration="1886000" />
       <workItem from="1707636879136" duration="1375000" />
+      <workItem from="1707822099228" duration="9176000" />
+      <workItem from="1707892883372" duration="1379000" />
+      <workItem from="1708518649071" duration="1911000" />
     </task>
     <task id="LOCAL-00001" summary="Describe chess pieces, build chessboard, and implement piece movement functionality.">
       <option name="closed" value="true" />

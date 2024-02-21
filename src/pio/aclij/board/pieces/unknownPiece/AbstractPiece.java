@@ -7,6 +7,7 @@ import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 
 import java.util.Iterator;
 import java.util.Set;
+import java.util.function.Predicate;
 
 public abstract class AbstractPiece extends Piece {
     public AbstractPiece(Color color, Coordinates coordinates) {
@@ -30,6 +31,11 @@ public abstract class AbstractPiece extends Piece {
 
     @Override
     public boolean isAvailableMove(UnknownPiece unknown) {
+        throw new UnsupportedOperationException("Method not supported");
+    }
+
+    @Override
+    protected Iterator<Coordinates> getMoves(Predicate<Piece> condition) {
         throw new UnsupportedOperationException("Method not supported");
     }
 }
