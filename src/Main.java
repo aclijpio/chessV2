@@ -41,10 +41,10 @@ public class Main {
 
         System.out.println("?????????????????/");
 
-        Board board1 = BoardFactory.fromFen("r1b1kb1P/1p1pp2p/2q2n2/1n1P2p1/pp1PP1p1/2N5/1B2P1P1/R2QKBNR w KQhq - 0 1");
+        Board board1 = BoardFactory.fromFen("r1b1kb1P/1p1pp2p/2q2n2/1n1P2p1/pp1PP3/2N5/1B2P1P1/R2QKBpR w KQhq - 0 1");
         Coordinates coordinates = new Coordinates(File.H, 1);
         Piece piece =  board1.getPiece(coordinates);
-        Iterator<Coordinates> coordinatesIterator = new PossiblePieceWithConditionIterator(board1, piece, piece1 -> true);
+        Iterator<Coordinates> coordinatesIterator = new PossiblePieceWithConditionIterator(board1, piece, piece1 -> piece.color != piece1.color);
         int counter = 0;
         System.out.println(board1.getPieces().values().stream()
                         .map(Piece::toString)
@@ -59,7 +59,5 @@ public class Main {
         while (coordinatesIterator1.hasNext()){
             System.out.println(coordinatesIterator1.next());
         }
-
-
     }
 }

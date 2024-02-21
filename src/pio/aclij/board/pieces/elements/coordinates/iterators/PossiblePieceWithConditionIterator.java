@@ -4,10 +4,11 @@ import pio.aclij.board.Board;
 import pio.aclij.board.pieces.Piece;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.function.Predicate;
 
-public class PossiblePieceWithConditionIterator extends PossibleCoordinatesIterator {
+public class PossiblePieceWithConditionIterator extends AbstractPossibleElementsIterator implements Iterator<Coordinates> {
     private final Predicate<Piece> condition;
     private final Board board;
 
@@ -21,17 +22,15 @@ public class PossiblePieceWithConditionIterator extends PossibleCoordinatesItera
     public boolean hasNext() {
         while (true) {
             if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
-                if (applyConditionToPiece(new Coordinates(selectedFile, selectedRank))) {
+                if (applyConditionToPiece(new Coordinates(selectedFile, selectedRank)))
                     return true;
-                } else {
-                    moveSelect(); // Move to the next position
-                }
+                 else
+                    moveSelect();
             } else {
-                if (selectedSideMoves == coordinatesPossibleMoves.length - 1) {
+                if (selectedSideMoves == coordinatesPossibleMoves.length - 1)
                     return false;
-                } else {
-                    skipSide(); // Move to the next side
-                }
+                else
+                    skipSide();
             }
         }
     }
@@ -42,17 +41,15 @@ public class PossiblePieceWithConditionIterator extends PossibleCoordinatesItera
             if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
                 if (applyConditionToPiece(new Coordinates(selectedFile, selectedRank))) {
                     Coordinates currentCoordinates = new Coordinates(selectedFile, selectedRank);
-                    moveSelect(); // Move to the next position
+                    moveSelect();
                     return currentCoordinates;
-                } else {
-                    moveSelect(); // Move to the next position
-                }
+                } else
+                    moveSelect();
             } else {
-                if (selectedSideMoves == coordinatesPossibleMoves.length - 1) {
+                if (selectedSideMoves == coordinatesPossibleMoves.length - 1)
                     throw new NoSuchElementException();
-                } else {
-                    skipSide(); // Move to the next side
-                }
+                 else
+                    skipSide();
             }
         }
     }
