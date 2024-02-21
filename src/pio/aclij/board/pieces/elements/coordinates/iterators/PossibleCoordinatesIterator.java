@@ -21,21 +21,32 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
 
     @Override
     public boolean hasNext() {
-        if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) return true;
-        if (selectedSideMoves == coordinatesPossibleMoves.length - 1) return false;
-        return checkNextSideFrom();
+        while (true) {
+            if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
+                return true;
+            } else
+                if (selectedSideMoves == coordinatesPossibleMoves.length - 1)
+                    return false;
+                 else
+                    skipSide();
+
+        }
     }
 
     @Override
     public Coordinates next() {
-        if (!Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
-            if (selectedSideMoves == coordinatesPossibleMoves.length - 1) throw new NoSuchElementException();
-            skipSide();
-            return next();
+        while (true) {
+            if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
+                Coordinates selectedCoordinates = new Coordinates(selectedFile, selectedRank);
+                moveSelect();
+                return selectedCoordinates;
+            } else {
+                if (selectedSideMoves == coordinatesPossibleMoves.length - 1)
+                    throw new NoSuchElementException();
+                 else
+                    skipSide();
+            }
         }
-        Coordinates selectedCoordinates = new Coordinates(selectedFile, selectedRank);
-        moveSelect();
-        return selectedCoordinates;
     }
     public void moveSelect(){
         int [] selectedSide = coordinatesPossibleMoves[this.selectedSideMoves];
@@ -55,8 +66,12 @@ public class PossibleCoordinatesIterator implements Iterator<Coordinates> {
         initSelect();
     }
     public boolean checkNextSideFrom(){
-        if (selectedSideMoves == coordinatesPossibleMoves.length - 1) return false;
-        skipSide();
-        return Coordinates.isValidCoordinate(selectedFile, selectedRank) || checkNextSideFrom();
+        while (selectedSideMoves < coordinatesPossibleMoves.length - 1) {
+            skipSide();
+            if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
