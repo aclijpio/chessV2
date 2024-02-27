@@ -31,14 +31,5 @@ public abstract class AbstractPossibleElementsIterator {
         increaseSelectSide();
         initSelect();
     }
-    public boolean checkNextSideFrom(){
-        while (selectedSideMoves < coordinatesPossibleMoves.length - 1) {
-            skipSide();
-            if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 }

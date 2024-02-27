@@ -30,4 +30,13 @@ public class SinglePossibleCoordinatesIterator extends PossibleCoordinatesIterat
         else increaseSelectSide();
         return selectedCoordinates;
     }
+    public boolean checkNextSideFrom(){
+        while (selectedSideMoves < coordinatesPossibleMoves.length - 1) {
+            skipSide();
+            if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

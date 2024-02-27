@@ -16,14 +16,11 @@ public class PossibleCoordinatesIterator extends AbstractPossibleElementsIterato
     @Override
     public boolean hasNext() {
         while (true) {
-            if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
+            if (Coordinates.isValidCoordinate(selectedFile, selectedRank))
                 return true;
-            } else
-                if (selectedSideMoves == coordinatesPossibleMoves.length - 1)
-                    return false;
-                 else
-                    skipSide();
-
+            if (selectedSideMoves == coordinatesPossibleMoves.length - 1)
+                return false;
+            skipSide();
         }
     }
 
