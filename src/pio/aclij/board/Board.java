@@ -3,6 +3,7 @@ package pio.aclij.board;
 import pio.aclij.board.pieces.elements.Color;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 import pio.aclij.board.pieces.Piece;
+import pio.aclij.board.pieces.elements.coordinates.iterators.PossiblePieceWithConditionIterator;
 import pio.aclij.board.pieces.exceptions.PieceNotFoundException;
 import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 import pio.aclij.game.rule.ChessGameState;
@@ -41,9 +42,14 @@ public class Board{
         return this.pieces;
     }
     public Set<Piece> getAttackingPiecesOfClass(Class<? extends Piece> clazz){
-  /*      return this.getPieces().values().stream()
-                .*/
-        return null;
+        Set<Piece> attackingPieces = new HashSet<>();
+        for (Piece piece : this.pieces.values()){
+            Iterator<Piece> pieceIterator = new PossiblePieceWithConditionIterator(this, piece, p -> piece.isAttackingClass(p, clazz));
+            if (pieceIterator.hasNext()){
+                attackingPieces.add(pieceIterator.next());
+            }
+        }
+        return attackingPieces;
     }
 
     public void pieceMoveTo(Coordinates selectedCoordinates, Coordinates targetCoordinates){

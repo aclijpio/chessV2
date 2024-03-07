@@ -30,13 +30,14 @@ public class Main {
         )
                 .getRules().stream().map(OrderedChessRule::getCondition).map(rule -> rule.getClass().getName()).collect(Collectors.joining(", ")));
         */
-        ChessRuleChain chain = ChessGameRule.builder(chessRuleBuilder -> chessRuleBuilder
-                .put(new CheckmateRule())
-                .put(new PawnPromotionRule()));
-        MoveValidator moveValidator = new MoveValidator(chain);
 
         Board board = BoardFactory.fromFen("rnbqkbnP/pppppppp/8/8/8/8/PPPPPPP1/RNBQKBNR w KQhq - 0 1");
         boardConsoleRenderer.render(board);
+        ChessRuleChain chain = ChessGameRule.builder(chessRuleBuilder -> chessRuleBuilder
+                .put(new CheckmateRule(board))
+                .put(new PawnPromotionRule()));
+        MoveValidator moveValidator = new MoveValidator(chain);
+
         moveValidator.execute(board);
         System.out.println(board.getState());
 

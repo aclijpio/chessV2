@@ -15,11 +15,7 @@ public class ChessGame {
 
     public void move(ChessMove move){
         if (move == null) return;
-
-
-
     }
-
     public boolean isValidMove(ChessMove chessMove){
 
         Piece source = board.getPiece(chessMove.source);

@@ -28,7 +28,7 @@ public abstract class Piece {
     public boolean isAlly(Piece piece){
         return this.color == piece.color;
     }
-    public boolean isAttackingClass(Board board, Class<? extends Piece> clazz) {
+    public boolean isAttackingClassIterator(Board board, Class<? extends Piece> clazz) {
         Iterator<Coordinates> coordinatesIterator = this.getMoves();
         while (coordinatesIterator.hasNext()){
             Coordinates currentCoordinates = coordinatesIterator.next();
@@ -40,6 +40,9 @@ public abstract class Piece {
             }
         }
         return false;
+    }
+    public boolean isAttackingClass(Piece piece, Class<? extends Piece> clazz){
+        return this.isEnemy(piece) && this.getClass() == clazz;
     }
     public abstract int [][] getMovement();
     protected abstract Iterator<Coordinates> getMoves();
