@@ -45,7 +45,7 @@ public class Main {
         Board board1 = BoardFactory.fromFen("r1b1kb1P/1p1pp2p/2q2n2/1n1P2p1/pp1PP3/2N5/1B2P1P1/R2QKBpR w KQhq - 0 1");
         Coordinates coordinates = new Coordinates(File.H, 1);
         Piece piece = board1.getPiece(coordinates);
-        Iterator<Coordinates> coordinatesIterator = new PossiblePieceWithConditionIterator(board1, piece, piece1 -> piece1.isEnemy(piece));
+        Iterator<Piece> coordinatesIterator = new PossiblePieceWithConditionIterator(board1, piece, piece1 -> piece1.isEnemy(piece));
         int counter = 0;
         System.out.println(board1.getPieces().values().stream()
                 .map(Piece::toString)

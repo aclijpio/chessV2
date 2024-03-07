@@ -6,14 +6,16 @@ import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import java.util.function.Predicate;
 
-public class PossiblePieceWithConditionIterator extends  AbstractPossibleElementsIterator implements Iterator<Coordinates> {
+public class PossiblePieceWithConditionIterator extends AbstractPossibleElementsIterator implements Iterator<Piece> {
     private final Predicate<Piece> condition;
     private final Board board;
 
     public PossiblePieceWithConditionIterator(Board board, Piece piece, Predicate<Piece> condition) {
         super(piece);
+        initSelect();
         this.board = board;
         this.condition = condition;
     }
@@ -34,15 +36,13 @@ public class PossiblePieceWithConditionIterator extends  AbstractPossibleElement
     }
 
     @Override
-    public Coordinates next() {
+    public Piece next() {
         while (true) {
-            System.out.println(selectedFile + "|" + selectedRank);
             if (Coordinates.isValidCoordinate(selectedFile, selectedRank)) {
-                System.out.println("COOR:"+ new Coordinates(selectedFile, selectedRank));
-                if (applyConditionToPiece(new Coordinates(selectedFile, selectedRank))) {
-                    Coordinates currentCoordinates = new Coordinates(selectedFile, selectedRank);
+                Optional<Piece> piece = getAfterApplyConditionToPiece(new Coordinates(selectedFile, selectedRank));
+                if (piece.isPresent()) {
                     moveSelect();
-                    return currentCoordinates;
+                    return piece.get();
                 }
                 moveSelect();
             } else {
@@ -52,14 +52,17 @@ public class PossiblePieceWithConditionIterator extends  AbstractPossibleElement
             }
         }
     }
+    private boolean applyConditionToPiece(Coordinates coordinates) {
+        if (!board.isSquareOccupied(coordinates))  return false;
 
+        Piece currentPiece = board.getPiece(coordinates);
+        return condition.test(currentPiece);
+    }
+    private Optional<Piece> getAfterApplyConditionToPiece(Coordinates coordinates){
+        if (!board.isSquareOccupied(coordinates))  return Optional.empty();
 
+        Piece currentPiece = board.getPiece(coordinates);
+        return condition.test(currentPiece) ? Optional.of(currentPiece) : Optional.empty();
 
-    public boolean applyConditionToPiece(Coordinates coordinates) {
-        if (board.isSquareOccupied(coordinates)) {
-            Piece currentPiece = board.getPiece(coordinates);
-            return condition.test(currentPiece);
-        }
-        return false;
     }
 }
