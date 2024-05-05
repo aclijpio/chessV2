@@ -6,12 +6,11 @@ import pio.aclij.board.pieces.elements.coordinates.File;
 import pio.aclij.board.pieces.elements.coordinates.iterators.PossibleCoordinatesIterator;
 import pio.aclij.board.pieces.elements.coordinates.iterators.PossiblePieceWithConditionIterator;
 import pio.aclij.game.MoveValidator;
-import pio.aclij.game.rule.ChessGameRule;
-import pio.aclij.game.rule.ChessRuleChain;
 import pio.aclij.game.conditions.CheckmateRule;
 import pio.aclij.game.conditions.PawnPromotionRule;
+import pio.aclij.game.rule.ChessGameRule;
+import pio.aclij.game.rule.ChessRuleChain;
 import pio.aclij.render.BoardConsoleRenderer;
-
 
 import java.util.Iterator;
 import java.util.stream.Collectors;
@@ -31,7 +30,7 @@ public class Main {
                 .getRules().stream().map(OrderedChessRule::getCondition).map(rule -> rule.getClass().getName()).collect(Collectors.joining(", ")));
         */
 
-        Board board = BoardFactory.fromFen("rnbqkbnP/pppppppp/8/8/8/8/PPPPPPP1/RNBQKBNR w KQhq - 0 1");
+        Board board = BoardFactory.fromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
         boardConsoleRenderer.render(board);
         ChessRuleChain chain = ChessGameRule.builder(chessRuleBuilder -> chessRuleBuilder
                 .put(new CheckmateRule(board))

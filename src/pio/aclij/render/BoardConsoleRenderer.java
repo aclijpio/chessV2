@@ -2,10 +2,11 @@ package pio.aclij.render;
 
 
 import pio.aclij.board.Board;
+import pio.aclij.board.pieces.Piece;
+import pio.aclij.board.pieces.PieceCode;
+import pio.aclij.board.pieces.elements.Color;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 import pio.aclij.board.pieces.elements.coordinates.File;
-import pio.aclij.board.pieces.elements.Color;
-import pio.aclij.board.pieces.Piece;
 
 public class BoardConsoleRenderer{
     private static final String ANSI_RESET = "\u001B[0m";
@@ -46,16 +47,8 @@ public class BoardConsoleRenderer{
     private String getSpriteForEmptySquare(Coordinates coordinates){
         return colorizeSprite("   ", Color.WHITE, coordinates.isSquareWhite());
     }
-    private String selectUnicodeSpriteForPiece(Piece piece){
-        return switch (piece.getClass().getSimpleName()) {
-            case "Pawn" -> "P";
-            case "Bishop" -> "B";
-            case "Queen" -> "Q";
-            case "Knight" -> "L";
-            case "King" -> "K";
-            case "Rook" -> "R";
-            default -> "";
-        };
+    private char selectUnicodeSpriteForPiece(Piece piece){
+        return PieceCode.valueOf(piece.getClass().getSimpleName().toUpperCase()).toSymbol();
     }
     private String getPieceSprite(Piece piece, Coordinates coordinates) {
         return colorizeSprite(" "+ selectUnicodeSpriteForPiece(piece) + " ", piece.color, coordinates.isSquareWhite());
