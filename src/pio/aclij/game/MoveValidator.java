@@ -1,7 +1,6 @@
 package pio.aclij.game;
 
 import pio.aclij.board.Board;
-import pio.aclij.game.rule.ChessGameRule;
 import pio.aclij.game.rule.ChessGameState;
 import pio.aclij.game.rule.ChessRuleChain;
 

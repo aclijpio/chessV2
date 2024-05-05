@@ -1,7 +1,7 @@
 package pio.aclij.game.conditions;
 
-import pio.aclij.game.rule.ChessGameState;
 import pio.aclij.board.pieces.Piece;
+import pio.aclij.game.rule.ChessGameState;
 
 public class PawnPromotionRule extends ChessRuleCondition {
     @Override

@@ -1,13 +1,12 @@
 package pio.aclij.board;
 
+import pio.aclij.board.pieces.Piece;
 import pio.aclij.board.pieces.elements.Color;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
-import pio.aclij.board.pieces.Piece;
 import pio.aclij.board.pieces.elements.coordinates.iterators.PossiblePieceWithConditionIterator;
 import pio.aclij.board.pieces.exceptions.PieceNotFoundException;
 import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 import pio.aclij.game.rule.ChessGameState;
-
 
 import java.util.*;
 

@@ -1,10 +1,10 @@
 package pio.aclij.board.pieces;
 
 import pio.aclij.board.Board;
-import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 import pio.aclij.board.pieces.elements.Color;
 import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 import pio.aclij.board.pieces.elements.coordinates.iterators.PossibleCoordinatesIterator;
+import pio.aclij.board.pieces.unknownPiece.UnknownPiece;
 
 import java.util.Iterator;
 import java.util.Set;

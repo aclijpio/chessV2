@@ -2,7 +2,6 @@ package pio.aclij.game;
 
 import pio.aclij.board.Board;
 import pio.aclij.board.pieces.Piece;
-import pio.aclij.board.pieces.elements.coordinates.Coordinates;
 
 public class ChessGame {
 
